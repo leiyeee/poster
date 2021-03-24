@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "helvetica";
+  background-color: white;
+  color: #999;
+  height: 100%;
+  font-size: 13px;
+  /*  background: url(https://subtlepatterns.com/patterns/white_wall.png) repeat;*/
+  background-size: 200% auto;
+}
+
+form {
+  position: fixed;
+  left: 20px;
+  top: 40px;
+  width: 200px;
+  margin: 0 auto;
+  text-align: left;
+  opacity: 0.5;
+  z-index: 99;
+}
+form:hover {
+  opacity: 1;
+}
+form row {
+  display: block;
+  margin: 10px 0px;
+}
+form row input {
+  float: left;
+  margin-right: 10px;
+}
+form input[name=line],
+form textarea[name=body] {
+  width: 100%;
+  font-size: 16px;
+  font-family: "helvetica";
+}
+form input[name=line] {
+  height: 40px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  cursor: pointer;
+  background-color: red;
+  color: #fff;
+  padding: 10px 20px;
+}
+.button:active {
+  margin-top: 32px;
+}
+
+#poster {
+  position: relative;
+  width: 900px;
+  height: 1250px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  margin: 50px auto 50px auto;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  outline: 99em solid #fff;
+  cursor: zoom-out;
+}
+#poster h1 {
+  position: relative;
+  z-index: 10;
+}
+#poster h1.tilted {
+  transform: rotate(-45deg);
+}
+#poster.viewing {
+  transform: scale(0.4);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  outline: none;
+  cursor: zoom-in;
+}
+#poster #body {
+  position: absolute;
+  z-index: 11;
+  font-size: 40px;
+  transform: rotate();
+  /*   &.tilted {
+       transform: rotate(-45deg);
+     }*/
+}
+#poster .border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+}
+
+/*#body,
+#line,
+.border,
+.squiggle{
+  transition: all 0.2s ease;
+  transform: translate3d(0,0,0);
+}*/
+.squiggle {
+  position: absolute;
+}
+.squiggle:nth-child(2n+1) {
+  transform: rotate(45deg);
+}
+.squiggle:nth-child(2n) {
+  transform: rotate(-45deg);
+}
+
+.square {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 8;
+}
+
+.circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+
+.cross {
+  background-color: red;
+  height: 100px;
+  position: relative;
+  width: 20px;
+}
+
+.cross:after {
+  background-color: red;
+  content: "";
+  height: 20px;
+  left: -40px;
+  position: absolute;
+  top: 40px;
+  width: 100px;
+}
+
+.image {
+  width: 100%;
+  max-width: 200px;
+  height: 0;
+  padding-bottom: 100%;
+}
