@@ -1,7 +1,7 @@
-let c1 = "#000000";
-var e = document.getElementById("color");
-    c1 = e.options[e.selectedIndex].value;
+let c1 = "#ff";
 var colors = [c1, "#000000"];
+
+console.log(c1);
 
 function ranBorder() {
     ranBorderSize = Math.floor((Math.random() * 500) + 1) + "px";
@@ -12,11 +12,18 @@ function ranBorder() {
 }
 
 function ranType() {
-    
+    var e = document.getElementById("color");
+    c1 = e.options[e.selectedIndex].value;
+    var choosecolor = ['#000000', c1];/* 颜色选择 */
+    /* 随机选择其中一种颜色 */
+    var c = Math.floor((Math.random() * choosecolor.length)+0);
+    ranTitleColor = choosecolor[c];/* line的随机色 */
+    ranBodyColor = choosecolor[c];/* body的随机颜色 */
     ranTypeSize = Math.floor((Math.random() * 300) + 50) + "px";
     ranBodySize = Math.floor((Math.random() * 100) + 10) + "px";
-    ranTitleColor = colors[Math.floor((Math.random() * colors.length) + 0)];
-    ranBodyColor = colors[Math.floor((Math.random() * colors.length) + 0)];
+    // ranTitleColor = colors[Math.floor((Math.random() * colors.length) + 0)];
+    // ranBodyColor = colors[Math.floor((Math.random() * colors.length) + 0)];
+
     document.getElementById("line").style.color = ranTitleColor;
     document.getElementById("line").style.fontSize = ranTypeSize;
     document.getElementById("body").style.fontSize = ranBodySize;

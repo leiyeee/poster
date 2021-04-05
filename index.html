@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>poster demon</title>
@@ -21,11 +22,11 @@
         <textarea name="body" type="text" placeholder="Body Copy" rows="5"></textarea>
         <row>
             <select id="color">
-            <option value="#33658A">MArch</option>
-            <option value="#86BBD8">MAUD</option>
-            <option value="#F6AE2D">MDES</option>
-            <option value="#F26419">MDE</option>
-        </select>
+                <option value="#33658A">MArch</option>
+                <option value="#86BBD8">MAUD</option>
+                <option value="#F6AE2D">MDES</option>
+                <option value="#F26419">MDE</option>
+            </select>
 
             <label>Theme color</label>
         </row>
@@ -66,10 +67,11 @@
             <input name="cross" type="checkbox">
         </row>
         <div id="new_poster" class="button">Design</div>
-
-        <a id="download" download="poster.png">
-            <button id="foo" type="button" onClick="download()">Download</button>
-        </a>
+        <div>
+            <a id="download" download="poster.png">
+                <div class="button" type="button" onClick="download()">Download</div>
+            </a>
+        </div>
     </form>
 
     <div id="poster" class="viewing">
@@ -95,11 +97,11 @@
             var element = $("#poster")[0];
             html2canvas(element).then(function(canvas) {
                 var myImage = canvas.toDataURL();
-                downloadURI(myImage, "cartao-virtual.png");
+                downloadURI(myImage, "poster.png");
             });
         }
     </script>
- 
+
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'>
     </script>
