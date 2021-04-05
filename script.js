@@ -1,4 +1,4 @@
-let c1 = "#ff";
+let c1 = "red";
 var colors = [c1, "#000000"];
 
 console.log(c1);
@@ -14,11 +14,10 @@ function ranBorder() {
 function ranType() {
     var e = document.getElementById("color");
     c1 = e.options[e.selectedIndex].value;
-    var choosecolor = ['#000000', c1];/* 颜色选择 */
+    var choosecolor = ['#000000', c1]; /* 颜色选择 */
     /* 随机选择其中一种颜色 */
-    var c = Math.floor((Math.random() * choosecolor.length)+0);
-    ranTitleColor = choosecolor[c];/* line的随机色 */
-    ranBodyColor = choosecolor[c];/* body的随机颜色 */
+    ranTitleColor = choosecolor[Math.floor((Math.random() * colors.length) + 0)];
+    ranBodyColor = choosecolor[Math.floor((Math.random() * colors.length) + 0)];
     ranTypeSize = Math.floor((Math.random() * 300) + 50) + "px";
     ranBodySize = Math.floor((Math.random() * 100) + 10) + "px";
     // ranTitleColor = colors[Math.floor((Math.random() * colors.length) + 0)];
@@ -44,7 +43,10 @@ function ranSpacing() {
 
 function ranSprinkles() {
     sprinkleNum = Math.floor((Math.random() * 20) + 2);
-    sprinkleColor = colors[Math.floor((Math.random() * colors.length) + 0)];
+       var e = document.getElementById("color");
+    c1 = e.options[e.selectedIndex].value;
+    var choosecolor = ['#000000', c1];
+    sprinkleColor = choosecolor[Math.floor((Math.random() * choosecolor.length) + 0)];
 
 
     for (var i = 0; i < sprinkleNum; i++) {
