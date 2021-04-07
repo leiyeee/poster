@@ -43,7 +43,7 @@ function ranSpacing() {
 
 function ranSprinkles() {
     sprinkleNum = Math.floor((Math.random() * 20) + 2);
-       var e = document.getElementById("color");
+    var e = document.getElementById("color");
     c1 = e.options[e.selectedIndex].value;
     var choosecolor = ['#000000', c1];
     sprinkleColor = choosecolor[Math.floor((Math.random() * choosecolor.length) + 0)];
@@ -65,9 +65,12 @@ function ranSprinkles() {
 }
 
 function ranCircles() {
-
-    circleColor = colors[Math.floor((Math.random() * colors.length) + 0)];
-
+    var e = document.getElementById("color");
+    c1 = e.options[e.selectedIndex].value;
+    var choosecolor = ['#000000', c1];
+    circleColor = choosecolor[Math.floor((Math.random() * colors.length) + 0)];
+    var dd = document.getElementById("size");
+    var c2 = dd.options[dd.selectedIndex].value;
     for (var i = 0; i < 10; i++) {
         console.log("working");
         $("#poster").append("<div class='circle'></div>");
@@ -78,12 +81,16 @@ function ranCircles() {
     }
     $(".circle").css({
         "background-color": circleColor,
+        "height": c2 +"px",
+        "width":c2+"px",
     });
 }
 
 function ranCross() {
-
-    crossColor = colors[Math.floor((Math.random() * colors.length) + 0)];
+    var e = document.getElementById("color");
+    c1 = e.options[e.selectedIndex].value;
+    var choosecolor = ['#000000', c1];
+    crossColor = choosecolor[Math.floor((Math.random() * colors.length) + 0)];
 
     for (var i = 0; i < 100; i++) {
         console.log("working");
