@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Poster Template 2</title>
+    <meta name="google" value="notranslate">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="style-t2.css">
+    <script src='html2canvas.js'></script>
+</head>
+
+<body>
+    <label>
+        <input type='checkbox'>
+        <span class='menu' id="menu" onclick="menuoptions('show')">
+            <span class='hamburger'></span>
+        </span>
+        <ul id="selectors" class="nobull">
+            <li>
+                <a href='index.html' data-content="Home">Home</a>
+            </li>
+            <li>
+                <a href='https://leiyeee.github.io/deargsd/' data-content="Force of poster" target="_blank">Force of poster</a>
+            </li>
+            <li>
+                <a href='template.html' data-content="Customize your poster">Customize your poster</a>
+            </li>
+            <li>
+                <a href='#' data-content="Collections">Collections</a>
+            </li>
+            <li>
+                <a href='#' data-content="Contact">Contact</a>
+            </li>
+        </ul>
+    </label>
+    <!-- partial:index.partial.html -->
+    <form>
+        <input name="line" type="text" placeholder="Title">
+        <textarea name="body" type="text" placeholder="Body Copy" rows="5"></textarea>
+        <input name="name" type="text" placeholder="Lecturer">
+        <input name="time" type="text" placeholder="01/01/2021">
+        <input name="location" type="text" placeholder="Gund hall room 403">
+
+        <row>
+            <input type="color" id="colorInput1">
+
+            <label style="font-size: 12px">Circle 1 color</label>
+
+        </row>
+        <row>
+            <input type="color" id="colorInput2">
+
+            <label style="font-size: 12px">Circle 2 color</label>
+
+        </row>
+    
+
+        <div id="new_poster" class="button">Design</div>
+        <div>
+            <a id="download" download="poster.jpg">
+                <div class="button" type="button" onClick="download()">Download</div>
+            </a>
+        </div>
+    </form>
+
+
+    <!-- Gallery -->
+    <main id="js-gallery" role="main" class="gallery">
+
+        <section class="gallery__body">
+
+            <div id="js-poster" class="main__gallery-poster poster">
+                <div class="poster__content">
+
+                    <header class="poster__header">
+                        <h1 id="line">Title..</h1><br>
+                        <h3 id="name">Name..</h3>
+
+
+
+                    </header>
+
+                    <section class="poster__meta">
+
+                        <ul>
+                            <li id="body" style="padding-right: 50px">Brief Introduction texts</li>
+
+                        </ul>
+
+                        <ul>
+                            <li id="time">Time..</li>
+
+                        </ul>
+                        <ul>
+                            <li id="location">Location...</li>
+                        </ul>
+                    </section>
+
+                    <section class="poster__body">
+                        <div class="poster__body-row poster__body-row--1">
+                            <div class="circle circle--teal"></div>
+                        </div>
+
+                        <div class="poster__body-row poster__body-row--2">
+                            <div class="circle circle--brown"></div>
+                            <div class="circle circle--teal"></div>
+                            <div class="circle circle--brown"></div>
+                            <div class="circle circle--teal"></div>
+                            <div class="circle circle--brown"></div>
+                            <div class="circle circle--teal"></div>
+                        </div>
+
+                        <div class="poster__body-row poster__body-row--3">
+                            <div class="circle circle--brown"></div>
+                        </div>
+                    </section>
+
+                </div>
+                <!-- .poster__content -->
+            </div>
+            <!-- .poster -->
+
+        </section>
+        <!-- .gallery__body -->
+
+    </main>
+    <!-- Gallery -->
+    <!-- partial -->
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+    <script src="./script-t2.js"></script>
+    <script>
+        $('input[name="line"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#line").html(lineText);
+        });
+        $('textarea[name="body"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#body").html(lineText);
+        });
+        $('input[name="time"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#time").html(lineText);
+        });
+        $('input[name="location"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#location").html(lineText);
+        });
+        $('input[name="name"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#name").html(lineText);
+        });
+
+
+        function changeColor() {
+            let c1 = document.getElementById('colorInput1').value;
+            let c2 = document.getElementById('colorInput2').value;
+            $(".circle--brown").css({
+                "background-color": c1,
+            });
+            $(".circle--teal").css({
+                "background-color": c2,
+                opacity: 0.6
+            });
+
+        };
+
+        $("#new_poster").on("click", function() {
+
+            changeColor();
+        });
+
+        function menuoptions(action) {
+            if (action == 'show') {
+                document.getElementById("menu").setAttribute("onclick", "menuoptions('hide')");
+                document.getElementById("selectors").style.display = "block";
+            } else {
+                document.getElementById("menu").setAttribute("onclick", "menuoptions('show')");
+                document.getElementById("selectors").style.display = "none";
+            }
+        }
+
+        function downloadURI(uri, name) {
+            var link = document.createElement("a");
+
+            link.download = name;
+            link.href = uri;
+            document.body.appendChild(link);
+            link.click();
+            clearDynamicLink(link);
+        }
+
+        function download() {
+            var element = $("#js-poster")[0];
+            html2canvas(element).then(function(canvas) {
+                var myImage = canvas.toDataURL();
+                downloadURI(myImage, "poster.jpg");
+            });
+        }
+    </script>
+
+</body></html>
