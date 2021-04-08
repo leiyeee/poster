@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Poster collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="./style-c.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <label>
+        <input type='checkbox'>
+        <span class='menu' id="menu" onclick="menuoptions('show')">
+            <span class='hamburger'></span>
+        </span>
+        <ul id="selectors" class="nobull">
+            <li>
+                <a href='index.html' data-content="Home">Home</a>
+            </li>
+            <li>
+                <a href='https://leiyeee.github.io/deargsd/' data-content="Force of poster" target="_blank">Force of poster</a>
+            </li>
+            <li>
+                <a href='template.html' data-content="Customize your poster">Customize your poster</a>
+            </li>
+            <li>
+                <a href='collection.html' data-content="Collections">Collections</a>
+            </li>
+            <li>
+                <a href='upload.html' data-content="Upload your poster" target="_blank">Upload your poster</a>
+            </li>
+        </ul>
+    </label>
+    <section class="section">
+        <h1><b>Poster collection</b></h1>
+        <div class="grid">
+            <div class="item">
+                <div class="item__details">
+                    Leture 01 #MArch
+                </div>
+            </div>
+            <div class="item item--large">
+                <div class="item__details">
+                    Leture 12 #maud
+                </div>
+            </div>
+            <div class="item item--medium">
+                <div class="item__details">
+                    Leture 09 #mla
+                </div>
+            </div>
+            <div class="item item--large">
+                <div class="item__details">
+                    Leture 03 #mup
+                </div>
+            </div>
+
+            <div class="item item--medium">
+                <div class="item__details">
+                    Leture 04 #mdes
+                </div>
+            </div>
+            <div class="item item--large">
+                <div class="item__details">
+                  Leture 07 #mde
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__details">
+                   Leture 04 #maud
+                </div>
+            </div>
+            <div class="item item--medium">
+                <div class="item__details">
+                   Leture 12 #march
+                </div>
+            </div>
+            <div class="item item--large">
+                <div class="item__details">
+                    Leture 11 #mla
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__details">
+                    Leture 23 #mdes
+                </div>
+            </div>
+            <div class="item item--medium">
+                <div class="item__details">
+                    Leture 42 #mup
+                </div>
+            </div>
+            <div class="item item--medium">
+                <div class="item__details">
+                   Leture 02 #mde
+                </div>
+            </div>
+            <div class="item item--large">
+                <div class="item__details">
+                   Leture 02 #mup
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__details">
+                    Leture 02 #mdes
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- partial -->
+    <script>
+    
+        function menuoptions(action){
+            if(action == 'show'){
+                document.getElementById("menu").setAttribute("onclick", "menuoptions('hide')");
+                document.getElementById("selectors").style.display = "block";
+            } else {
+                document.getElementById("menu").setAttribute("onclick", "menuoptions('show')");
+                document.getElementById("selectors").style.display = "none";
+            }
+        }
+    
+    
+    </script>
+
+</body></html>
