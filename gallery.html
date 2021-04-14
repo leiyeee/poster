@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="./style-g.css">
+
+</head>
+
+<body>
+    <label style="width:0%; box-shadow: 0 0px 0px rgba(0,0,0,0.0), 0 0px 0px rgba(0,0,0,0.0);">
+        <input type='checkbox' id='ch'>
+        <span class='menu' id="menu" onclick="menuoptions('show')">
+            <span class='hamburger'></span>
+        </span>
+        <ul id="selectors" class="nobull">
+            <li>
+                <a href='index.html' data-content="Home">Home</a>
+            </li>
+            <li>
+                <a href='https://leiyeee.github.io/deargsd/' data-content="Force of poster" target="_blank">Force of poster</a>
+            </li>
+            <li>
+                <a href='template.html' data-content="Customize your poster">Customize your poster</a>
+            </li>
+            <li>
+                <a href='gallery.html' data-content="Collections">Collections</a>
+            </li>
+            <li>
+                <a href='upload.html' data-content="Upload your poster" target="_blank">Upload your poster</a>
+            </li>
+        </ul>
+    </label>
+    <!-- partial:index.partial.html -->
+    <h1>FILTER BY COLOR</h1>
+    <div class="container">
+        <input type="radio" id="blue" name="color" />
+        <label for="blue">BLUE</label>
+        <input type="radio" id="red" name="color" />
+        <label for="red">RED</label>
+        <input type="radio" id="green" name="color" />
+        <label for="green">GREEN</label>
+        <input type="radio" id="reset" name="color" />
+        <label for="reset">RESET</label>
+
+        <div class="tile blue"><img src="p1.png"></div>
+        <div class="tile red"><img src="p2.png"></div>
+        <div class="tile blue"><img src="p3.png"></div>
+        <div class="tile green"><img src="p4.png"></div>
+        <div class="tile blue"><img src="p5.png"></div>
+        <div class="tile red"><img src="poster%20(10).jpg"></div>
+        <div class="tile red"><img src="p2.png"></div>
+        <div class="tile green"><img src="p5.png"></div>
+        <div class="tile blue"><img src="p4.png"></div>
+        <div class="tile green"><img src="p1.png"></div>
+        <div class="tile red"><img src="p1.png"></div>
+        <div class="tile green"><img src="p1.png"></div>
+        <div class="tile blue"><img src="p1.png"></div>
+        <div class="tile blue"><img src="p1.png"></div>
+        <div class="tile green"><img src="p1.png"></div>
+
+    </div>
+    <!-- partial -->
+    <script>
+    
+        function menuoptions(action){
+            if(action == 'show'){
+                document.getElementById("menu").setAttribute("onclick", "menuoptions('hide')");
+                document.getElementById("selectors").style.display = "block";
+            } else {
+                document.getElementById("menu").setAttribute("onclick", "menuoptions('show')");
+                document.getElementById("selectors").style.display = "none";
+            }
+        }
+    
+    
+    </script>
+
+</body>
+
+</html>
