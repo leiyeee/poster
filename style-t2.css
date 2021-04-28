@@ -249,47 +249,73 @@ h6 {
 }
 
 form {
-  position: fixed;
-  left: 20px;
-  top: 40px;
-  width: 200px;
-  margin: 0 auto;
-  text-align: left;
-  opacity: 0.5;
-  z-index: 99;
+    padding: 10px;
+    position: fixed;
+    left: 30px;
+    top: 30px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: left;
+    opacity: 0.8;
+    z-index: 99;
+    box-shadow: 0px 14px 80px rgba(12, 0, 0, 0.3);
 }
+
 form:hover {
-  opacity: 1;
+    opacity: 1;
 }
+
 form row {
-  display: block;
-  margin: 10px 0px;
+    display: block;
+    margin: 10px 0px;
 }
+
 form row input {
-  float: left;
-  margin-right: 10px;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-form input[name=line],
-form textarea[name=body] {
-  width: 100%;
-  font-size: 16px;
-  font-family: "helvetica";
+
+input[type="text"],
+select {
+    margin-left: 10px;
+    background: rgba(255, 255, 255, .1);
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 4px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 10px;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
-form input[name=line] {
-  height: 40px;
-}
+
 .button {
     font-size: 12px;
-  display: inline-block;
-  margin-top: 30px;
-  cursor: pointer;
-  background-color: red;
-  color: #fff;
-  padding: 10px 20px;
+    display: inline-block;
+    margin-top: 30px;
+    cursor: pointer;
+    background-color: red;
+    color: #fff;
+    padding: 5px 10px;
 }
-.button:active {
-  margin-top: 32px;
+
+.button:hover {
+    color: red;
+    width: 30%;
+    border-radius: 30px;
+    background: transparent;
+    border-width: 2px 2px 3px;
+    border-color: red;
 }
+
 
 label .menu {
   position: absolute;

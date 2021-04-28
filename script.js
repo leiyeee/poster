@@ -1,4 +1,4 @@
-let c1 = "red";
+let c1 = "white";
 var colors = [c1, "#000000"];
 
 console.log(c1);
@@ -81,8 +81,8 @@ function ranCircles() {
     }
     $(".circle").css({
         "background-color": circleColor,
-        "height": c2 +"px",
-        "width":c2+"px",
+        "height": c2 + "px",
+        "width": c2 + "px",
     });
 }
 
@@ -131,10 +131,15 @@ function ranCross() {
 //   }
 // }
 
-
+function changeColor() {
+    //title
+    var e = document.getElementById("color");
+    c1 = e.options[e.selectedIndex].value;
+    document.body.style.backgroundColor = c1;
+};
 
 $("#new_poster").on("click", function () {
-
+    changeColor();
     ranType();
 
     if ($('input[name="border"]').is(":checked")) {

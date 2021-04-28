@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Poster Template 2</title>
+    <meta name="google" value="notranslate">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="style-t3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+</head>
+
+<body>
+    <label>
+        <input type='checkbox'>
+        <span class='menu' id="menu" onclick="menuoptions('show')">
+            <span class='hamburger'></span>
+        </span>
+        <ul id="selectors" class="nobull">
+            <li>
+                <a href='index.html' data-content="Home">Home</a>
+            </li>
+            <li>
+                <a href='info.html' data-content="Info">Info</a>
+            </li>
+            <li>
+                <a href='template.html' data-content="Customize your poster">Customize your poster</a>
+            </li>
+            <li>
+                <a href='gallery.html' data-content="Collections">Collections</a>
+            </li>
+            <li>
+                <a href='upload.html' data-content="Upload your poster" target="_blank">Upload your poster</a>
+            </li>
+        </ul>
+    </label>
+    <!-- partial:index.partial.html -->
+    <form>
+        <input name="text_7" type="text" placeholder="Title">
+        <input name="text_8" type="text" placeholder="Subtitle">
+        <input name="text_1" type="text" placeholder="Left corner">
+        <input name="text_2" type="text" placeholder="Left corner">
+        <input name="text_3" type="text" placeholder="Right corner">
+        <input name="text_4" type="text" placeholder="Left side">
+        <input name="text_5" type="text" placeholder="Right side">
+        <input name="text_6" type="text" placeholder="Bottom">
+        <input name="text_9" type="text" placeholder="Center">
+
+        <row>
+            <h5 style="padding-bottom:10px;font-size: 12px">Gradient color for title</h5>
+            <input type="color" id="colorInput1">
+
+            <label style="font-size: 12px">Start</label>
+
+        </row>
+
+        <row>
+            <input type="color" id="colorInput2">
+
+            <label style="font-size: 12px">Middle</label>
+
+        </row>
+        <row>
+            <input type="color" id="colorInput3">
+
+            <label style="font-size: 12px">End</label>
+
+        </row>
+        <row>
+            <p style="padding-top:10px;padding-bottom:10px;font-size: 12px">Gradient color for subtitle</p>
+            <input type="color" id="colorInput4">
+
+            <label style="font-size: 12px">Start</label>
+
+        </row>
+
+        <row>
+            <input type="color" id="colorInput5">
+
+            <label style="font-size: 12px">Middle</label>
+
+        </row>
+        <row>
+            <input type="color" id="colorInput6">
+
+            <label style="font-size: 12px">End</label>
+
+        </row>
+        <row>
+            <input type="file" id="imgLoader">
+        </row>
+
+
+        <div id="new_poster" class="button">Design</div>
+        <div>
+            <a id="download" download="poster.jpg">
+                <div class="button" id="foo" onclick="downloadimage()">Download</div>
+            </a>
+        </div>
+    </form>
+
+
+    <!-- Gallery -->
+    <main id="js-gallery" role="main" class="gallery">
+
+        <section class="gallery__body">
+
+            <div id="js-poster">
+                <div class="wrapper">
+                    <div class="art" id="p">
+                        <div class="noise"></div>
+                        <div class="texts" id="layer-2"><span id="text_1">This is a poster</span><span id="text_2">@MDes Adpd</span><span id="text_3">Issue 01</span><span id="text_4">This is a poster</span><span id="text_5">HI dear gsd </span><span id="text_6">Hi dear gsd © 2021</span></div>
+                        <div class="door" id="door_1"></div>
+                        <div class="door-shadow"></div>
+                        <div class="door-shadow-2"></div>
+                        <div class="door" id="door_2"></div>
+                        <div class="gradient-1"></div>
+                        <div class="gradient-2"></div>
+                        <div class="round" id="layer-3">
+                            <div class="textbox"><span id="text_9">Love</span>
+                                <h1 class="clip-text" id="text_7" style="font-size: 120px">GSD</h1>
+                                <h1 class="clip-text" id="text_8" style="font-size: 100px">we</h1>
+                            </div>
+                        </div>
+                        <canvas width="560" height="560" id="c"></canvas>
+                    </div>
+                </div>
+                <!-- .poster__content -->
+            </div>
+            <!-- .poster -->
+
+        </section>
+        <!-- .gallery__body -->
+
+    </main>
+    <!-- Gallery -->
+    <!-- partial -->
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.5/fabric.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+    <script src="script-t3.js"></script>
+    <script src="dom-to-image.js"></script>
+    <script src="FileSaver.js"></script>
+    <script>
+        $('input[name="text_1"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#text_1").html(lineText);
+        });
+        $('input[name="text_2"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#text_2").html(lineText);
+        });
+        $('input[name="text_3"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#text_3").html(lineText);
+        });
+        $('input[name="text_4"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#text_4").html(lineText);
+        });
+        $('input[name="text_5"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#text_5").html(lineText);
+        });
+        $('input[name="text_6"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#text_6").html(lineText);
+        });
+        $('input[name="text_7"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#text_7").html(lineText);
+        });
+        $('input[name="text_8"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#text_8").html(lineText);
+        });
+        $('input[name="text_9"]').on("keyup", function() {
+            lineText = $(this).val();
+            $("#text_9").html(lineText);
+        });
+
+
+        function changeColor() {
+            //title
+            let c1 = document.getElementById('colorInput1').value;
+            let c2 = document.getElementById('colorInput2').value;
+            let c3 = document.getElementById('colorInput3').value;
+            var dom1 = document.getElementById('text_7');
+            dom1.style.backgroundImage = 'linear-gradient(' +
+                'to bottom' + ',' + c1 + ',' + c2 + ',' + c3 + ')';
+            //background
+            /*  var dom2 = document.getElementById('layer-2');
+               dom2.style.backgroundImage = 'linear-gradient(' +
+                  'to bottom' + ',' + c1 + ',' + c2 + ',' + c3 + ')';*/
+            //subtitle
+            let c4 = document.getElementById('colorInput4').value;
+            let c5 = document.getElementById('colorInput5').value;
+            let c6 = document.getElementById('colorInput6').value;
+            var dom = document.getElementById('text_8');
+            dom.style.backgroundImage = 'linear-gradient(' +
+                'to bottom' + ',' + c4 + ',' + c5 + ',' + c6 + ')';
+        };
+
+        $("#new_poster").on("click", function() {
+
+            changeColor();
+        });
+
+        function menuoptions(action) {
+            if (action == 'show') {
+                document.getElementById("menu").setAttribute("onclick", "menuoptions('hide')");
+                document.getElementById("selectors").style.display = "block";
+            } else {
+                document.getElementById("menu").setAttribute("onclick", "menuoptions('show')");
+                document.getElementById("selectors").style.display = "none";
+            }
+        }
+
+        /*   function downloadURI(uri, name) {
+               var link = document.createElement("a");
+
+               link.download = name;
+               link.href = uri;
+               document.body.appendChild(link);
+               link.click();
+               clearDynamicLink(link);
+           }
+
+           function download() {
+               var element = $("#js-poster")[0];
+               html2canvas(element).then(function(canvas) {
+                   var myImage = canvas.toDataURL();
+                   downloadURI(myImage, "poster.jpg");
+               });
+           }*/
+        function downloadimage() {
+            //var container = document.getElementById("image-wrap"); //specific element on page
+            var container = document.getElementById("p");; // full page 
+            html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+                var link = document.createElement("a");
+                document.body.appendChild(link);
+                link.download = "poster.jpg";
+                link.href = canvas.toDataURL();
+                link.target = '_blank';
+                link.click();
+            });
+        }
+
+    </script>
+
+</body></html>

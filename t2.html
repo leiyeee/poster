@@ -36,7 +36,7 @@
     <!-- partial:index.partial.html -->
     <form>
         <input name="line" type="text" placeholder="Title">
-        <textarea name="body" type="text" placeholder="Body Copy" rows="5"></textarea>
+        <input name="body" type="text" placeholder="Body Copy" rows="5">
         <input name="name" type="text" placeholder="Lecturer">
         <input name="time" type="text" placeholder="01/01/2021">
         <input name="location" type="text" placeholder="Gund hall room 403">
@@ -137,7 +137,7 @@
             lineText = $(this).val();
             $("#line").html(lineText);
         });
-        $('textarea[name="body"]').on("keyup", function() {
+        $('input[name="body"]').on("keyup", function() {
             lineText = $(this).val();
             $("#body").html(lineText);
         });
@@ -190,7 +190,7 @@
             link.href = uri;
             document.body.appendChild(link);
             link.click();
-            clearDynamicLink(link);
+            /*clearDynamicLink(link);*/
         }
 
         function download() {

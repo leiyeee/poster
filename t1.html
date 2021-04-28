@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body id="main">
     <!-- partial:index.partial.html -->
 
     <head>
@@ -43,14 +43,18 @@
         <input name="line" type="text" placeholder="Title">
         <textarea name="body" type="text" placeholder="Body Copy" rows="5"></textarea>
         <row>
+            <label>Theme color</label>
             <select id="color">
-                <option value="#33658A">MArch</option>
-                <option value="#86BBD8">MAUD</option>
-                <option value="#F6AE2D">MDES</option>
-                <option value="#F26419">MDE</option>
+                <option value="#7f9183">MArch</option>
+                <option value="#ffd5c2">MAUD</option>
+                <option value="#ffd8be">MDES</option>
+                <option value="#5ca4a9">MLA(UD)</option>
+                <option value="#c8553d">MDE</option>
+                <option value="#274c77">PHD/DDES</option>
+                <option value="#5c6d70">Other</option>
             </select>
 
-            <label>Theme color</label>
+            
         </row>
         <row>
             <input name="border" type="checkbox">
@@ -85,13 +89,14 @@
             <input name="circle" type="checkbox">
         </row>
         <row>
+            
             <select id="size">
                 <option value="10">S</option>
                 <option value="40">M</option>
                 <option value="80">L</option>
             </select>
 
-            <label>Size</label>
+           
         </row>
         <row>
             <label>Cross</label>
