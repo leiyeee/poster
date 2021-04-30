@@ -176,15 +176,24 @@ body {
 .flex--dialga .flex__item--right {
     background: #ade8f7;
 }
+/* tialga */
+
+.flex--tialga .flex__item--left {
+    background: #efaac4;
+}
+
+.flex--tialga .flex__item--right {
+    background: #ffc4d1;
+}
 
 /* Zekrom */
 
 .flex--zekrom .flex__item--left {
-    background: #424242;
+    background: black;
 }
 
 .flex--zekrom .flex__item--right {
-    background: #a7bcbb;
+    background: #e4e4e4;
 }
 
 .flex__content {
@@ -197,9 +206,9 @@ body {
 
 .pokemon__img {
     position: absolute;
-    bottom: 20px;
-    right: 15%;
-    max-height: 40vw;
+    bottom: 40px;
+    right: 20%;
+    max-height: 35vw;
     opacity: 1;
     transform: translate3d(0, 0, 0);
     transition: opacity 0.43s 0.6s, transform 0.4s 0.65s cubic-bezier(0, 0.88, 0.4, 0.93);
@@ -260,6 +269,7 @@ body {
 }
 
 .date {
+    color: black;
     margin-top: -10px;
     top: 50%;
     left: -158px;
@@ -330,6 +340,7 @@ label[for=work2],
 label[for=work3],
 label[for=work4],
 label[for=work5] {
+    color:black;
     font-size: 1.3em;
     position: absolute;
     z-index: 100;
@@ -487,3 +498,67 @@ label a:hover::before {
 #selectors {
     display: none;
 }
+.draw-border {
+    box-shadow: inset 0 0 0 4px white;
+    color: white;
+    transition: color 0.25s 0.0833333333s;
+    position: relative;
+}
+
+.draw-border::before,
+.draw-border::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.draw-border::before {
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+}
+
+.draw-border::after {
+    border-top-width: 4px;
+    border-right-width: 4px;
+}
+
+.draw-border:hover {
+    color: #e63946;
+}
+
+.draw-border:hover::before,
+.draw-border:hover::after {
+    border-color: #e63946;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
+}
+
+.draw-border:hover::before {
+    transition-delay: 0s, 0s, 0.25s;
+}
+
+.draw-border:hover::after {
+    transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1.2;
+    font: 500 1rem "Roboto Slab", sans-serif;
+    padding: 0.5em 2em;
+    letter-spacing: 0.05rem;
+}
+
+.btn:focus {
+    outline: 1px dotted #ffc4d1;
+}
+
