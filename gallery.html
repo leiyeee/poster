@@ -19,7 +19,7 @@
                 <a href='index.html' data-content="Home">Home</a>
             </li>
             <li>
-               <a href='dist/info.html' data-content="Info">Info</a>
+                <a href='dist/info.html' data-content="Info">Info</a>
             </li>
             <li>
                 <a href='template.html' data-content="Customize your poster">Customize your poster</a>
@@ -33,7 +33,7 @@
         </ul>
     </label>
     <!-- partial:index.partial.html -->
-    <h1>FILTER BY COLOR</h1>
+    <h1>Poster Gallery</h1>
     <div class="container">
         <input type="radio" id="blue" name="color" />
         <label for="blue">#MDes</label>
@@ -43,7 +43,13 @@
         <label for="green">#MAUD</label>
         <input type="radio" id="reset" name="color" />
         <label for="reset">RESET</label>
+        <div class="tile red"><img src="p15.png"></div>
+        <div class="tile blue"><img src="p13.png"></div>
+        <div class="tile green"><img src="p14.png"></div>
 
+        <div class="tile red"><img src="p16.png"></div>
+        <div class="tile blue"><img src="p17.png"></div>
+        <div class="tile green"><img src="p18.png"></div>
         <div class="tile blue"><img src="p1.png"></div>
         <div class="tile red"><img src="p2.png"></div>
         <div class="tile blue"><img src="p3.png"></div>
@@ -60,8 +66,9 @@
         <div class="tile blue"><img src="p1.png"></div>
         <div class="tile green"><img src="p1.png"></div>
 
+
     </div>
-   <script>
+    <script>
         function menuoptions(action) {
             if (action == 'show') {
                 document.getElementById("menu").setAttribute("onclick", "menuoptions('hide')");
@@ -82,6 +89,7 @@
         //        $("#menushow").attr("id", "menuhidden");
         //        document.getElementById("selectors").style.display="none";
         //    })
+
     </script>
 
 </body>
